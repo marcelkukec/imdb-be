@@ -30,5 +30,8 @@ export class MoviesService {
     return this.movieRepository.findOne({where: {id: id}});
   }
 
-  
+  async delete(id: number): Promise<Movie> {
+    await this.movieRepository.delete(id);
+    return this.movieRepository.findOne({where: {id: id}});
+  }
 }
