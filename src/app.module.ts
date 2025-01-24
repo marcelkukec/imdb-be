@@ -5,6 +5,7 @@ import { MoviesModule } from './movies/movies.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Movie } from "./movies/entities/movie";
 import { GenresModule } from './genres/genres.module';
+import { Genre } from "./genres/entity/genre";
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { GenresModule } from './genres/genres.module';
       username: 'postgres',
       password: 'marcel380',
       database: 'imdb',
-      entities: [Movie],
+      entities: [Movie, Genre],
       synchronize: true,
     }),
     MoviesModule,
