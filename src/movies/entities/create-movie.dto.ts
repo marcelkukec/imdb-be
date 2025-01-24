@@ -6,7 +6,7 @@ export class CreateMovieDto {
   @IsString()
   desc: string;
   @IsDateString()
-  releaseDate: Date;
+  release_date: Date;
   @IsNumber()
   @Min(1)
   @Max(20)
