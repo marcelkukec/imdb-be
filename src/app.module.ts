@@ -8,8 +8,6 @@ import { GenresModule } from './genres/genres.module';
 import { Genre } from "./genres/entity/genre";
 import { UsersModule } from './users/users.module';
 import { User } from "./users/entity/user.entity";
-import { AuthService } from './auth/auth.service';
-import { AuthController } from './auth/auth.controller';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
@@ -29,7 +27,7 @@ import { AuthModule } from './auth/auth.module';
     UsersModule,
     AuthModule,
   ],
-  controllers: [AppController, AuthController],
-  providers: [AppService, AuthService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
