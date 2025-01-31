@@ -6,6 +6,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Movie } from "./movies/entities/movie";
 import { GenresModule } from './genres/genres.module';
 import { Genre } from "./genres/entity/genre";
+import { UsersModule } from './users/users.module';
+import { User } from "./users/entity/user.entity";
+import { AuthService } from './auth/auth.service';
+import { AuthController } from './auth/auth.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -16,13 +21,15 @@ import { Genre } from "./genres/entity/genre";
       username: 'postgres',
       password: 'marcel380',
       database: 'imdb',
-      entities: [Movie, Genre],
+      entities: [Movie, Genre, User],
       synchronize: true,
     }),
     MoviesModule,
     GenresModule,
+    UsersModule,
+    AuthModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, AuthController],
+  providers: [AppService, AuthService],
 })
 export class AppModule {}
