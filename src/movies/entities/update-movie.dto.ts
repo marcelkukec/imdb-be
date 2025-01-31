@@ -15,4 +15,5 @@ export class UpdateMovieDto {
   @Min(1)
   @Max(20)
   rating?: number;
+  genre_id?: number;
 }
