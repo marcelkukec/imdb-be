@@ -7,6 +7,7 @@ export class Genre{
   id: number;
   @Column()
   title: string;
+
   @OneToMany(() => Movie, (movie) => movie.genre)
   movies: Movie[];
 }
